@@ -16,12 +16,98 @@ const GenshinImpactEmbedMessageAuthorName = `Genshin Impact - Notification`;
 const GenshinImpactEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1236539625657466911/112385885_p0_master1200.jpg`;
 const HonkaiStarRailEmbedMessageAuthorName = `Honkai Star Rail - Notification`;
 const HonkaiStarRailEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1236547000787533824/gp3ebskaz85c1.png`;
+const AuthorIconUrl = 'https://cdn.discordapp.com/attachments/1179367744014143510/1237388845969047582/Logo_1_JPEG.png';
 
 //handles all the messages
 
-client.on("messageCreate", (message) => {
-  
+client.on("messageCreate", async (message) => {
+  if (message.content === '..instagram') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle('@itsmeprinceyt - instagram')
+    .setDescription('https://www.instagram.com/itsmeprinceyt');
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
+  if (message.content === '..youtube') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle('ItsMe Prince0 - YouTube')
+    .setDescription('https://www.youtube.com/@itsmeprince0');
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
+  if (message.content === '..discord') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle('ItsMe Prince Server - Discord Invite Link')
+    .setDescription('https://discord.gg/HgXNs4p5cx');
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
+  if (message.content === '..clips') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle('ItsMe Prince Clips - YouTube')
+    .setDescription('https://www.youtube.com/playlist?list=PLE3BGeUsE3iqhCkZaXgHTPnN8s__8uNCt');
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
+  if (message.content === '..sofiguide') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle('Sofi Discord Bot FULL HINDI GUIDE - YouTube')
+    .setDescription('https://youtu.be/kfrl1yO8sUA');
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
+  if (message.content === '..ppdevice' || message.content === '..ppphone') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle(`I'm currently using IQOO NEO 7 ( 12+256 Variant) - Black`)
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
+  if (message.content === '..pppc' || message.content === '..pppcspecs') {
+    const embed = new EmbedBuilder()
+    .setAuthor({name: 'ItsMe Prince',iconURL: AuthorIconUrl,})
+    .setTitle(`PC Specs`)
+    .setDescription(`
+    CPU🐤Ryzen 5 3600
+    
+    RAM🐤A-DATA XPG DDR4 (8GBx2)
+    
+    MOTHERBOARD🐥MSI B450 PRO-VDH-MAX
+    
+    GRAPHIC CARD🐥INNO3D NVIDIA GEFORCE RTX 3060 Twin X2 OC 
+    
+    PSU✨Antec 550 Watt 80 Plus
+    
+    SSD🐥A-DATA GAMMIX 256 GB M.2
+    
+    SSD 2🐥& Patriot 1TB SATA SSD
+    
+    CABINET🐤Ant Esports ICE-200TG
+    `)
+
+    await message.reply({
+      embeds: [embed],
+    });
+  }
 });
+
 
 // embedded messages 
 
