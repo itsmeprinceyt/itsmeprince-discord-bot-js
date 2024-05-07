@@ -51,6 +51,38 @@ async function MainRegistering(){
             required: true,
           },
         ],
+      },
+      {
+        name: 'in_stock_welkin',
+        description: 'Stock available!',
+        options: [
+          {
+            name: 'price',
+            description: 'Enter the price of the item',
+            type: ApplicationCommandOptionType.Number,
+            required: true,
+          },
+        ],
+      },
+      {
+        name: 'in_stock_express_pass',
+        description: 'Stock available!',
+        options: [
+          {
+            name: 'price',
+            description: 'Enter the price of the item',
+            type: ApplicationCommandOptionType.Number,
+            required: true,
+          },
+        ],
+      },
+      {
+        name: 'out_of_stock_welkin',
+        description: 'Stock available!',
+      },
+      {
+        name: 'out_of_stock_express_pass',
+        description: 'Stock available!',
       }
   ];
 

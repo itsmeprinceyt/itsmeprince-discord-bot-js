@@ -16,9 +16,9 @@ const GenshinImpactEmbedMessageAuthorName = `Genshin Impact - Notification`;
 const GenshinImpactEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1236539625657466911/112385885_p0_master1200.jpg`;
 const HonkaiStarRailEmbedMessageAuthorName = `Honkai Star Rail - Notification`;
 const HonkaiStarRailEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1236547000787533824/gp3ebskaz85c1.png`;
-const AuthorIconUrl =
-  "https://cdn.discordapp.com/attachments/1179367744014143510/1237388845969047582/Logo_1_JPEG.png";
-
+const AuthorIconUrl = "https://cdn.discordapp.com/attachments/1179367744014143510/1237388845969047582/Logo_1_JPEG.png";
+const ItsMePrinceShopWelkin = "https://cdn.discordapp.com/attachments/1179367744014143510/1237461191593431120/Welkin.png";
+const ItsMePrinceShopExpressPass = "https://cdn.discordapp.com/attachments/1179367744014143510/1237461202574250177/Express_Pass.png";
 
 //handles all the messages + embed messages
 client.on("messageCreate", async (message) => {
@@ -167,6 +167,115 @@ client.on("messageCreate", async (message) => {
 // slash embedded messages
 client.on("interactionCreate", async (interaction) => {
   if (interaction.user.username.toLowerCase() === "itsmeprinceyt") {
+    if (interaction.commandName === "in_stock_welkin") {
+      const Code = interaction.options.get("price").value;
+
+      const code = "```GENSHIN IMPACT - BLESSING OF THE WELKIN MOON```" + `\`\`\`PRICE ${Code}\`\`\``;
+      const main = new EmbedBuilder()
+        .setTitle('IN STOCK !!')
+        .setDescription(code)
+        .setImage(ItsMePrinceShopWelkin)
+        .setFooter({ text: "Prices can fluctuate anytime" })
+        .setTimestamp()
+        .setColor(0x63ff00);
+
+      const body = new EmbedBuilder()
+        .setTitle('Read before purchasing')
+        .setDescription('Read <#1177928702114406481> before proceeding')
+        .setColor(0x63ff00);
+
+        const footer = new EmbedBuilder()
+        .setTitle('To Purchase')
+        .setDescription('**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>')
+        .setColor(0x63ff00); 
+    
+
+      await interaction
+        .reply({
+          content: "<@&1179344445875953694> <@&1179346833294753874>",
+          embeds: [main,body,footer],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        }).catch(console.error);
+
+      console.log(
+        `[IN STOCK] Genshin Impact Blessing of the Welkin Stock Updated at ${new Date()}`
+      );
+    }
+    if (interaction.commandName === "in_stock_express_pass") {
+      const Code = interaction.options.get("price").value;
+
+      const code = "```HONKAI STAR RAIL - EXPRESS SUPPLY PASS```" + `\`\`\`PRICE ${Code}\`\`\``;
+      const main = new EmbedBuilder()
+        .setTitle('IN STOCK !!')
+        .setDescription(code)
+        .setImage(ItsMePrinceShopExpressPass)
+        .setFooter({ text: "Prices can fluctuate anytime" })
+        .setTimestamp()
+        .setColor(0x63ff00);
+
+      const body = new EmbedBuilder()
+        .setTitle('Read before purchasing')
+        .setDescription('Read <#1179353148482146404> before proceeding')
+        .setColor(0x63ff00);
+
+        const footer = new EmbedBuilder()
+        .setTitle('To Purchase')
+        .setDescription('**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>')
+        .setColor(0x63ff00); 
+    
+
+      await interaction
+        .reply({
+          content: "<@&1179344445875953694> <@&1179346833294753874>",
+          embeds: [main,body,footer],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        }).catch(console.error);
+
+      console.log(
+        `[IN STOCK] Honkai Staril Rail Express Supply Pass Stock Updated at ${new Date()}`
+      );
+    }
+    if (interaction.commandName === "out_of_stock_welkin") {
+      const code = "```GENSHIN IMPACT - BLESSING OF THE WELKIN MOON```";
+      const main = new EmbedBuilder()
+        .setTitle('OUT OF STOCK !!')
+        .setDescription(code)
+        .setImage(ItsMePrinceShopWelkin)
+        .setColor(0xFF0000);
+
+      await interaction
+        .reply({
+          embeds: [main],
+          fetchReply: true,
+        }).catch(console.error);
+
+      console.log(
+        `[OUT OF STOCK] Genshin Impact Blessing of the Welkin Stock Updated at ${new Date()}`
+      );
+    }
+    if (interaction.commandName === "out_of_stock_express_pass") {
+      const code = "```HONKAI STAR RAIL - EXPRESS SUPPLY PASS```";
+      const main = new EmbedBuilder()
+        .setTitle('OUT OF STOCK !!')
+        .setDescription(code)
+        .setImage(ItsMePrinceShopExpressPass)
+        .setColor(0xFF0000);
+
+      await interaction
+        .reply({
+          embeds: [main],
+          fetchReply: true,
+        }).catch(console.error);
+
+      console.log(
+        `[OUT OF STOCK] Honkai Staril Rail Express Supply Pass Stock Updated at ${new Date()}`
+      );
+    }
+  }
+  // Genshin Impact & Honkai Star Rail - Sending Primo/Jade notification to users!
+  if (interaction.user.username.toLowerCase() === "itsmeprinceyt") {
     if (interaction.commandName === "genshin_impact_primogem") {
       const Code = interaction.options.get("enter-code").value;
       const InputImage = interaction.options.get("image").value;
@@ -200,9 +309,7 @@ client.on("interactionCreate", async (interaction) => {
         })
         .catch(console.error);
 
-      console.log(
-        `Genshin Impact Redeem Code Message has been delivered: ${Code}`
-      );
+      console.log(`Redeem Code ${Code} from Genshin Impact has been generated on ${new Date()}`);
     }
     if (interaction.commandName === "honkai_star_rail_jades") {
       const Code = interaction.options.get("enter-code").value;
@@ -237,21 +344,20 @@ client.on("interactionCreate", async (interaction) => {
         })
         .catch(console.error);
 
-      console.log(
-        `Honkai Star Rail Redeem Code Message has been delivered: ${Code}`
-      );
+        console.log(`Redeem Code ${Code} from Honkai Star Rail has been generated on ${new Date()}`);
     }
   }
 });
 
 client.on("ready", (c) => {
   console.log(`${c.user.tag} is online and running now .... `);
-
-  client.user.setStatus("dnd");
+  let currentStatus = "dnd";
+  client.user.setStatus(currentStatus);
   client.user.setActivity({
     name: 'over PP 🥸',
     type: ActivityType.Watching,
   });
+  console.log(`${c.user.tag} is in ${currentStatus} state .... `);
 });
 
 client.login(process.env.TOKEN);
