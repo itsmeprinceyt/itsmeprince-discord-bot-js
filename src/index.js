@@ -174,8 +174,7 @@ client.on("messageCreate", async (message) => {
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Admin Commands`)
         .setDescription(
-          "```/genshin_impact_primogem • Send Primogems Notification``````/honkai_star_rail_jades • Send Jades Notification``````/in_stock_welkin • Welkin IN STOCK``````/in_stock_express_pass • Express Pass IN STOCK``````/out_of_stock_welkin • Welkin OUT OF STOCK``````/out_of_stock_express_pass • Express Pass OUT OF STOCK```"
-        );
+          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n");
 
       await message.reply({
         embeds: [embed],
@@ -367,6 +366,95 @@ client.on("interactionCreate", async (interaction) => {
         .catch(console.error);
 
         console.log(`Redeem Code ${Code} from Honkai Star Rail has been generated on ${new Date()}`);
+    }
+
+    if (interaction.commandName === "genshin_impact_livestream") {
+      let Code1 = interaction.options.get("first-code").value;
+      Code1 = Code1.toUpperCase();
+
+      let Code2 = interaction.options.get("second-code").value;
+      Code2 = Code2.toUpperCase();
+
+      let Code3 = interaction.options.get("third-code").value;
+      Code3 = Code3.toUpperCase();
+
+      const InputImage = interaction.options.get("image").value;
+      const cleanURL = InputImage.trim().replace(/&$/, "");
+
+      const Title = interaction.options.get("notification-title").value;
+
+      const header = new EmbedBuilder()
+        .setAuthor({
+          name: GenshinImpactEmbedMessageAuthorName,
+          iconURL: GenshinImpactEmbedMessageAuthorIconUrl,
+        })
+        .setTitle(Title)
+        .setImage(cleanURL);
+
+      const main = new EmbedBuilder()
+        .setDescription(`Code 1: [${Code1}](https://genshin.mihoyo.com/en/gift?code=${Code1})\nCode 2: [${Code2}](https://genshin.mihoyo.com/en/gift?code=${Code2})\nCode 3: [${Code3}](https://genshin.mihoyo.com/en/gift?code=${Code3})`);
+
+      const footer = new EmbedBuilder()
+        .setTitle("Click on the code to redeem or use the following website to redeem!")
+        .setDescription(`https://genshin.mihoyo.com/en/gift`);
+
+      await interaction
+        .reply({
+          content: "<@&969188588870852628>",
+          embeds: [header,main,footer],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        })
+        .then((message) => {
+          message.react("977169624187695104").catch(console.error);
+        })
+        .catch(console.error);
+
+      console.log(`Special Livestream redeem Code ${Code1} ${Code2} ${Code2} from Genshin Impact has been generated on ${new Date()}`);
+    }
+    if (interaction.commandName === "honkai_star_rail_livestream") {
+      let Code1 = interaction.options.get("first-code").value;
+      Code1 = Code1.toUpperCase();
+
+      let Code2 = interaction.options.get("second-code").value;
+      Code2 = Code2.toUpperCase();
+
+      let Code3 = interaction.options.get("third-code").value;
+      Code3 = Code3.toUpperCase();
+
+      const InputImage = interaction.options.get("image").value;
+      const cleanURL = InputImage.trim().replace(/&$/, "");
+
+      const Title = interaction.options.get("notification-title").value;
+
+      const header = new EmbedBuilder()
+        .setAuthor({
+          name: HonkaiStarRailEmbedMessageAuthorName,
+          iconURL: HonkaiStarRailEmbedMessageAuthorIconUrl,
+        })
+        .setTitle(Title)
+        .setImage(cleanURL);
+
+      const main = new EmbedBuilder()
+        .setDescription(`Code 1: [${Code1}](https://hsr.hoyoverse.com/gift?code=${Code1})\nCode 2: [${Code2}](https://hsr.hoyoverse.com/gift?code=${Code2})\nCode 3: [${Code3}](https://hsr.hoyoverse.com/gift?code=${Code3})`);
+
+      const footer = new EmbedBuilder()
+        .setTitle("Click on the code to redeem or use the following website to redeem!")
+        .setDescription(`https://hsr.hoyoverse.com/gift`);
+
+      await interaction
+        .reply({
+          content: "<@&1124817467257139270>",
+          embeds: [header,main,footer],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        })
+        .then((message) => {
+          message.react("1131210828704645175").catch(console.error);
+        })
+        .catch(console.error);
+
+      console.log(`Special Livestream redeem Code ${Code1} ${Code2} ${Code2} from Honkai Star Rail has been generated on ${new Date()}`);
     }
   }
 });

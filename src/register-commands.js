@@ -29,11 +29,83 @@ async function MainRegistering(){
         ],
       },
       {
+        name: 'genshin_impact_livestream',
+        description: 'Sends special livestream redeem codes',
+        options: [
+          {
+            name: 'first-code',
+            description: 'Enter primo code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'second-code',
+            description: 'Enter primo code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'third-code',
+            description: 'Enter primo code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'notification-title',
+            description: 'Enter rewards of this code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'image',
+            description: 'Add image url',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+        ],
+      },
+      {
         name: 'honkai_star_rail_jades',
         description: 'Sends jade redeem code embed!',
         options: [
           {
             name: 'enter-code',
+            description: 'Enter jade code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'notification-title',
+            description: 'Enter rewards of this code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'image',
+            description: 'Add image url',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+        ],
+      },
+      {
+        name: 'honkai_star_rail_livestream',
+        description: 'Sends special livestream redeem codes',
+        options: [
+          {
+            name: 'first-code',
+            description: 'Enter jade code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'second-code',
+            description: 'Enter jade code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'third-code',
             description: 'Enter jade code',
             type: ApplicationCommandOptionType.String,
             required: true,
