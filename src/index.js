@@ -33,7 +33,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..instagram is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..youtube") {
       const embed = new EmbedBuilder()
@@ -44,7 +44,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..youtube is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..discord") {
       const embed = new EmbedBuilder()
@@ -55,7 +55,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..discord is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..clips") {
       const embed = new EmbedBuilder()
@@ -68,7 +68,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..clips is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..sofiguide") {
       const embed = new EmbedBuilder()
@@ -79,7 +79,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..sofiguide is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..ppdevice" || message.content === "..ppphone") {
       const embed = new EmbedBuilder()
@@ -89,7 +89,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..ppdevice is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..pppc" || message.content === "..pppcspecs") {
       const embed = new EmbedBuilder()
@@ -115,7 +115,7 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..pppcspecs is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..whatsapp") {
       const embed = new EmbedBuilder()
@@ -128,24 +128,27 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..whatsapp is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content === "..help") {
       const embed = new EmbedBuilder()
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Commands`)
         .setDescription(
-          "```..instagram``````..youtube``````..discord``````..clips``````..sofiguide``````..ppdevice``````..pppc``````..whatsapp```\n```..help```"
+          "```..instagram``````..youtube``````..discord``````..clips``````..sofiguide``````..ppdevice``````..pppc``````..whatsapp``````..math```\n```..help```"
         );
 
       await message.reply({
         embeds: [embed],
       });
-      console.log(`Command ..help is used at ${new Date()}`)
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
     }
     if (message.content.startsWith("..math")) {
       const expression = message.content.slice("..math ".length).trim();
       try {
+        if(expression === '' || expression === null){
+          throw error;
+        }
         const result = eval(expression);
         const embed = new EmbedBuilder()
           .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
@@ -154,13 +157,32 @@ client.on("messageCreate", async (message) => {
         await message.reply({
           embeds: [embed],
         });
-        console.log(`Command ..math is used at ${new Date()}`)
+
+        console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
       } catch (error) {
-        console.log("There was an error processing the expression.");
+        console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: There was an error processing the expression\nTime: ${new Date()}`);
       }
     }
   } catch (error) {
     console.log(`Cannot initiate the command due to an expected error: ${error}`);
+  }
+
+  // Admin Commands
+  if (message.author.username === "itsmeprinceyt") {
+    if (message.content === "..admin") {
+      const embed = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
+        .setTitle(`ItsMe Prince Bot - Admin Commands`)
+        .setDescription(
+          "```/genshin_impact_primogem • Send Primogems Notification``````/honkai_star_rail_jades • Send Jades Notification``````/in_stock_welkin • Welkin IN STOCK``````/in_stock_express_pass • Express Pass IN STOCK``````/out_of_stock_welkin • Welkin OUT OF STOCK``````/out_of_stock_express_pass • Express Pass OUT OF STOCK```"
+        );
+
+      await message.reply({
+        embeds: [embed],
+      });
+      
+      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+    }
   }
 });
 
