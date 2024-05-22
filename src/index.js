@@ -1,4 +1,9 @@
-import { Client, IntentsBitField, EmbedBuilder, ActivityType } from "discord.js";
+import {
+  Client,
+  IntentsBitField,
+  EmbedBuilder,
+  ActivityType,
+} from "discord.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,11 +19,20 @@ const client = new Client({
 //Some variables
 const GenshinImpactEmbedMessageAuthorName = `Genshin Impact - Notification`;
 const GenshinImpactEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1236539625657466911/112385885_p0_master1200.jpg`;
+
 const HonkaiStarRailEmbedMessageAuthorName = `Honkai Star Rail - Notification`;
 const HonkaiStarRailEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1236547000787533824/gp3ebskaz85c1.png`;
-const AuthorIconUrl = "https://cdn.discordapp.com/attachments/1179367744014143510/1237388845969047582/Logo_1_JPEG.png";
-const ItsMePrinceShopWelkin = "https://cdn.discordapp.com/attachments/1179367744014143510/1237461191593431120/Welkin.png";
-const ItsMePrinceShopExpressPass = "https://cdn.discordapp.com/attachments/1179367744014143510/1237461202574250177/Express_Pass.png";
+
+const WutheringWavesEmbedMessageAuthorName = `Wuthering Waves  - Notification`;
+const WutheringWavesEmbedMessageAuthorIconUrl = `https://cdn.discordapp.com/attachments/1179367744014143510/1242897713314533486/ameFGPYH-qhOSxdsSA_fA54I4Ch-eO8y7Pj4x6W6ejQkvKbhVjCehKlPerBY9X2L8ek.png`;
+
+const AuthorIconUrl =
+  "https://cdn.discordapp.com/attachments/1179367744014143510/1237388845969047582/Logo_1_JPEG.png";
+
+const ItsMePrinceShopWelkin =
+  "https://cdn.discordapp.com/attachments/1179367744014143510/1237461191593431120/Welkin.png";
+const ItsMePrinceShopExpressPass =
+  "https://cdn.discordapp.com/attachments/1179367744014143510/1237461202574250177/Express_Pass.png";
 
 //handles all the messages + embed messages
 client.on("messageCreate", async (message) => {
@@ -33,7 +47,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..youtube") {
       const embed = new EmbedBuilder()
@@ -44,7 +62,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..discord") {
       const embed = new EmbedBuilder()
@@ -55,7 +77,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..clips") {
       const embed = new EmbedBuilder()
@@ -68,7 +94,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..sofiguide") {
       const embed = new EmbedBuilder()
@@ -79,7 +109,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..ppdevice" || message.content === "..ppphone") {
       const embed = new EmbedBuilder()
@@ -89,7 +123,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..pppc" || message.content === "..pppcspecs") {
       const embed = new EmbedBuilder()
@@ -115,7 +153,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..whatsapp") {
       const embed = new EmbedBuilder()
@@ -128,7 +170,11 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content === "..help") {
       const embed = new EmbedBuilder()
@@ -141,12 +187,16 @@ client.on("messageCreate", async (message) => {
       await message.reply({
         embeds: [embed],
       });
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
     if (message.content.startsWith("..math")) {
       const expression = message.content.slice("..math ".length).trim();
       try {
-        if(expression === '' || expression === null){
+        if (expression === "" || expression === null) {
           throw error;
         }
         const result = eval(expression);
@@ -158,13 +208,23 @@ client.on("messageCreate", async (message) => {
           embeds: [embed],
         });
 
-        console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+        console.log(
+          `\nUser: [${message.author.username}]\nCommand: ${
+            message.content
+          }\nResponse: Sent\nTime: ${new Date()}`
+        );
       } catch (error) {
-        console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: There was an error processing the expression\nTime: ${new Date()}`);
+        console.log(
+          `\nUser: [${message.author.username}]\nCommand: ${
+            message.content
+          }\nResponse: There was an error processing the expression\nTime: ${new Date()}`
+        );
       }
     }
   } catch (error) {
-    console.log(`Cannot initiate the command due to an expected error: ${error}`);
+    console.log(
+      `Cannot initiate the command due to an expected error: ${error}`
+    );
   }
 
   // Admin Commands
@@ -174,13 +234,18 @@ client.on("messageCreate", async (message) => {
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Admin Commands`)
         .setDescription(
-          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n");
+          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n"
+        );
 
       await message.reply({
         embeds: [embed],
       });
-      
-      console.log(`\nUser: [${message.author.username}]\nCommand: ${message.content}\nResponse: Sent\nTime: ${new Date()}`);
+
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
     }
   }
 });
@@ -191,9 +256,11 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.commandName === "in_stock_welkin") {
       const Code = interaction.options.get("price").value;
 
-      const code = "```GENSHIN IMPACT - BLESSING OF THE WELKIN MOON```" + `\`\`\`PRICE ${Code}\`\`\``;
+      const code =
+        "```GENSHIN IMPACT - BLESSING OF THE WELKIN MOON```" +
+        `\`\`\`PRICE ${Code}\`\`\``;
       const main = new EmbedBuilder()
-        .setTitle('IN STOCK !!')
+        .setTitle("IN STOCK !!")
         .setDescription(code)
         .setImage(ItsMePrinceShopWelkin)
         .setFooter({ text: "Prices can fluctuate anytime" })
@@ -201,23 +268,25 @@ client.on("interactionCreate", async (interaction) => {
         .setColor(0x63ff00);
 
       const body = new EmbedBuilder()
-        .setTitle('Read before purchasing')
-        .setDescription('Read <#1177928702114406481> before proceeding')
+        .setTitle("Read before purchasing")
+        .setDescription("Read <#1177928702114406481> before proceeding")
         .setColor(0x63ff00);
 
-        const footer = new EmbedBuilder()
-        .setTitle('To Purchase')
-        .setDescription('**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>')
-        .setColor(0x63ff00); 
-    
+      const footer = new EmbedBuilder()
+        .setTitle("To Purchase")
+        .setDescription(
+          "**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>"
+        )
+        .setColor(0x63ff00);
 
       await interaction
         .reply({
           content: "<@&1179344445875953694> <@&1179346833294753874>",
-          embeds: [main,body,footer],
+          embeds: [main, body, footer],
           allowedMentions: { parse: ["roles"] },
           fetchReply: true,
-        }).catch(console.error);
+        })
+        .catch(console.error);
 
       console.log(
         `[IN STOCK] Genshin Impact Blessing of the Welkin Stock Updated at ${new Date()}`
@@ -226,9 +295,11 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.commandName === "in_stock_express_pass") {
       const Code = interaction.options.get("price").value;
 
-      const code = "```HONKAI STAR RAIL - EXPRESS SUPPLY PASS```" + `\`\`\`PRICE ${Code}\`\`\``;
+      const code =
+        "```HONKAI STAR RAIL - EXPRESS SUPPLY PASS```" +
+        `\`\`\`PRICE ${Code}\`\`\``;
       const main = new EmbedBuilder()
-        .setTitle('IN STOCK !!')
+        .setTitle("IN STOCK !!")
         .setDescription(code)
         .setImage(ItsMePrinceShopExpressPass)
         .setFooter({ text: "Prices can fluctuate anytime" })
@@ -236,23 +307,25 @@ client.on("interactionCreate", async (interaction) => {
         .setColor(0x63ff00);
 
       const body = new EmbedBuilder()
-        .setTitle('Read before purchasing')
-        .setDescription('Read <#1179353148482146404> before proceeding')
+        .setTitle("Read before purchasing")
+        .setDescription("Read <#1179353148482146404> before proceeding")
         .setColor(0x63ff00);
 
-        const footer = new EmbedBuilder()
-        .setTitle('To Purchase')
-        .setDescription('**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>')
-        .setColor(0x63ff00); 
-    
+      const footer = new EmbedBuilder()
+        .setTitle("To Purchase")
+        .setDescription(
+          "**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>"
+        )
+        .setColor(0x63ff00);
 
       await interaction
         .reply({
           content: "<@&1179344445875953694> <@&1179346833294753874>",
-          embeds: [main,body,footer],
+          embeds: [main, body, footer],
           allowedMentions: { parse: ["roles"] },
           fetchReply: true,
-        }).catch(console.error);
+        })
+        .catch(console.error);
 
       console.log(
         `[IN STOCK] Honkai Staril Rail Express Supply Pass Stock Updated at ${new Date()}`
@@ -261,16 +334,17 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.commandName === "out_of_stock_welkin") {
       const code = "```GENSHIN IMPACT - BLESSING OF THE WELKIN MOON```";
       const main = new EmbedBuilder()
-        .setTitle('OUT OF STOCK !!')
+        .setTitle("OUT OF STOCK !!")
         .setDescription(code)
         .setImage(ItsMePrinceShopWelkin)
-        .setColor(0xFF0000);
+        .setColor(0xff0000);
 
       await interaction
         .reply({
           embeds: [main],
           fetchReply: true,
-        }).catch(console.error);
+        })
+        .catch(console.error);
 
       console.log(
         `[OUT OF STOCK] Genshin Impact Blessing of the Welkin Stock Updated at ${new Date()}`
@@ -279,20 +353,40 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.commandName === "out_of_stock_express_pass") {
       const code = "```HONKAI STAR RAIL - EXPRESS SUPPLY PASS```";
       const main = new EmbedBuilder()
-        .setTitle('OUT OF STOCK !!')
+        .setTitle("OUT OF STOCK !!")
         .setDescription(code)
         .setImage(ItsMePrinceShopExpressPass)
-        .setColor(0xFF0000);
+        .setColor(0xff0000);
 
       await interaction
         .reply({
           embeds: [main],
           fetchReply: true,
-        }).catch(console.error);
+        })
+        .catch(console.error);
 
       console.log(
         `[OUT OF STOCK] Honkai Staril Rail Express Supply Pass Stock Updated at ${new Date()}`
       );
+    }
+    if (interaction.commandName === "itsmeprince_changes") {
+      const Change = interaction.options.get("change_detail").value;
+      const Change_Title = interaction.options.get("change_title").value;
+      const main = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
+        .setTitle(Change_Title)
+        .setDescription(Change);
+
+      await interaction
+        .reply({
+          content: "<@&1124706806531371135>",
+          embeds: [main],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        })
+        .catch(console.error);
+
+      console.log(`ItsMe Prince has used Changes Embed`);
     }
   }
   // Genshin Impact & Honkai Star Rail - Sending Primo/Jade notification to users!
@@ -330,7 +424,9 @@ client.on("interactionCreate", async (interaction) => {
         })
         .catch(console.error);
 
-      console.log(`Redeem Code ${Code} from Genshin Impact has been generated on ${new Date()}`);
+      console.log(
+        `Redeem Code ${Code} from Genshin Impact has been generated on ${new Date()}`
+      );
     }
     if (interaction.commandName === "honkai_star_rail_jades") {
       const Code = interaction.options.get("enter-code").value;
@@ -365,7 +461,41 @@ client.on("interactionCreate", async (interaction) => {
         })
         .catch(console.error);
 
-        console.log(`Redeem Code ${Code} from Honkai Star Rail has been generated on ${new Date()}`);
+      console.log(
+        `Redeem Code ${Code} from Honkai Star Rail has been generated on ${new Date()}`
+      );
+    }
+    if (interaction.commandName === "wuthering_waves_astrites") {
+      const Code = interaction.options.get("enter-code").value;
+      const InputImage = interaction.options.get("image").value;
+      const CodeDescription =
+        interaction.options.get("notification-title").value;
+      const cleanURL = InputImage.trim().replace(/&$/, "");
+
+      const embed = new EmbedBuilder()
+        .setAuthor({
+          name: WutheringWavesEmbedMessageAuthorName,
+          iconURL: WutheringWavesEmbedMessageAuthorIconUrl,
+        })
+        .setTitle(CodeDescription)
+        .setDescription(`Code: ${Code}`)
+        .setImage(cleanURL);
+
+      await interaction
+        .reply({
+          content: "<@&1242892684226592920>",
+          embeds: [embed],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        })
+        .then((message) => {
+          message.react("977169624187695104").catch(console.error);
+        })
+        .catch(console.error);
+
+      console.log(
+        `Redeem Code ${Code} from Wuthering Waves has been generated on ${new Date()}`
+      );
     }
 
     if (interaction.commandName === "genshin_impact_livestream") {
@@ -391,17 +521,20 @@ client.on("interactionCreate", async (interaction) => {
         .setTitle(Title)
         .setImage(cleanURL);
 
-      const main = new EmbedBuilder()
-        .setDescription(`Code 1: [${Code1}](https://genshin.mihoyo.com/en/gift?code=${Code1})\nCode 2: [${Code2}](https://genshin.mihoyo.com/en/gift?code=${Code2})\nCode 3: [${Code3}](https://genshin.mihoyo.com/en/gift?code=${Code3})`);
+      const main = new EmbedBuilder().setDescription(
+        `Code 1: [${Code1}](https://genshin.mihoyo.com/en/gift?code=${Code1})\nCode 2: [${Code2}](https://genshin.mihoyo.com/en/gift?code=${Code2})\nCode 3: [${Code3}](https://genshin.mihoyo.com/en/gift?code=${Code3})`
+      );
 
       const footer = new EmbedBuilder()
-        .setTitle("Click on the code to redeem or use the following website to redeem!")
+        .setTitle(
+          "Click on the code to redeem or use the following website to redeem!"
+        )
         .setDescription(`https://genshin.mihoyo.com/en/gift`);
 
       await interaction
         .reply({
           content: "<@&969188588870852628>",
-          embeds: [header,main,footer],
+          embeds: [header, main, footer],
           allowedMentions: { parse: ["roles"] },
           fetchReply: true,
         })
@@ -410,7 +543,9 @@ client.on("interactionCreate", async (interaction) => {
         })
         .catch(console.error);
 
-      console.log(`Special Livestream redeem Code ${Code1} ${Code2} ${Code2} from Genshin Impact has been generated on ${new Date()}`);
+      console.log(
+        `Special Livestream redeem Code ${Code1} ${Code2} ${Code2} from Genshin Impact has been generated on ${new Date()}`
+      );
     }
     if (interaction.commandName === "honkai_star_rail_livestream") {
       let Code1 = interaction.options.get("first-code").value;
@@ -435,17 +570,20 @@ client.on("interactionCreate", async (interaction) => {
         .setTitle(Title)
         .setImage(cleanURL);
 
-      const main = new EmbedBuilder()
-        .setDescription(`Code 1: [${Code1}](https://hsr.hoyoverse.com/gift?code=${Code1})\nCode 2: [${Code2}](https://hsr.hoyoverse.com/gift?code=${Code2})\nCode 3: [${Code3}](https://hsr.hoyoverse.com/gift?code=${Code3})`);
+      const main = new EmbedBuilder().setDescription(
+        `Code 1: [${Code1}](https://hsr.hoyoverse.com/gift?code=${Code1})\nCode 2: [${Code2}](https://hsr.hoyoverse.com/gift?code=${Code2})\nCode 3: [${Code3}](https://hsr.hoyoverse.com/gift?code=${Code3})`
+      );
 
       const footer = new EmbedBuilder()
-        .setTitle("Click on the code to redeem or use the following website to redeem!")
+        .setTitle(
+          "Click on the code to redeem or use the following website to redeem!"
+        )
         .setDescription(`https://hsr.hoyoverse.com/gift`);
 
       await interaction
         .reply({
           content: "<@&1124817467257139270>",
-          embeds: [header,main,footer],
+          embeds: [header, main, footer],
           allowedMentions: { parse: ["roles"] },
           fetchReply: true,
         })
@@ -454,7 +592,9 @@ client.on("interactionCreate", async (interaction) => {
         })
         .catch(console.error);
 
-      console.log(`Special Livestream redeem Code ${Code1} ${Code2} ${Code2} from Honkai Star Rail has been generated on ${new Date()}`);
+      console.log(
+        `Special Livestream redeem Code ${Code1} ${Code2} ${Code2} from Honkai Star Rail has been generated on ${new Date()}`
+      );
     }
   }
 });
@@ -464,7 +604,7 @@ client.on("ready", (c) => {
   let currentStatus = "dnd";
   client.user.setStatus(currentStatus);
   client.user.setActivity({
-    name: 'over PP 🥸',
+    name: "over PP 🥸",
     type: ActivityType.Watching,
   });
   console.log(`${c.user.tag} is in ${currentStatus} state .... `);

@@ -125,6 +125,30 @@ async function MainRegistering(){
         ],
       },
       {
+        name: 'wuthering_waves_astrites',
+        description: 'Sends Astrites redeem code embed!',
+        options: [
+          {
+            name: 'enter-code',
+            description: 'Enter jade code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'notification-title',
+            description: 'Enter rewards of this code',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'image',
+            description: 'Add image url',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+        ],
+      },
+      {
         name: 'in_stock_welkin',
         description: 'Stock available!',
         options: [
@@ -155,7 +179,25 @@ async function MainRegistering(){
       {
         name: 'out_of_stock_express_pass',
         description: 'Stock available!',
-      }
+      },
+      {
+        name: 'itsmeprince_changes',
+        description: 'Sends a ping when there is a server change',
+        options: [
+          {
+            name: 'change_title',
+            description: 'Enter title',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          },
+          {
+            name: 'change_detail',
+            description: 'Enter changes',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          }
+        ],
+      },
   ];
 
   const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
