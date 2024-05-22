@@ -176,12 +176,64 @@ client.on("messageCreate", async (message) => {
         }\nResponse: Sent\nTime: ${new Date()}`
       );
     }
+    if (message.content === "..gi") {
+      const embed = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl }).setTitle(`ItsMe Prince - Game UID`).setDescription(`Genshin Impact UID: 889406482`);
+
+      await message.reply({
+        embeds: [embed],
+      });
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
+    }
+    if (message.content === "..bgmi") {
+      const embed = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl }).setTitle(`ItsMe Prince - Game UID`).setDescription(`BGMI UID: 5651014966`);
+
+      await message.reply({
+        embeds: [embed],
+      });
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
+    }
+    if (message.content === "..hsr") {
+      const embed = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl }).setTitle(`ItsMe Prince - Game UID`).setDescription(`Honkai Star Rail UID: 802581646 `);
+
+      await message.reply({
+        embeds: [embed],
+      });
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
+    }
+    if (message.content === "..ww") {
+      const embed = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl }).setTitle(`ItsMe Prince - Game UID`).setDescription(`Wuthering Waves UID: 502272457`);
+
+      await message.reply({
+        embeds: [embed],
+      });
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
+    }
     if (message.content === "..help") {
       const embed = new EmbedBuilder()
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Commands`)
         .setDescription(
-          "```..instagram``````..youtube``````..discord``````..clips``````..sofiguide``````..ppdevice``````..pppc``````..whatsapp``````..math```\n```..help```"
+          "```..instagram``````..youtube``````..discord``````..clips``````..sofiguide``````..ppdevice``````..pppc``````..whatsapp``````..math``````..gi``````..hsr``````..ww``````..bgmi```\n```..help```"
         );
 
       await message.reply({
@@ -234,7 +286,7 @@ client.on("messageCreate", async (message) => {
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Admin Commands`)
         .setDescription(
-          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n"
+          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/wuthering_waves_astrites` • Send Astrites Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n`/itsmeprince_changes` • Sends Changes Embed"
         );
 
       await message.reply({
