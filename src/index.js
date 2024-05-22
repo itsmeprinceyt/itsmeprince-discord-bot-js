@@ -489,7 +489,7 @@ client.on("interactionCreate", async (interaction) => {
           fetchReply: true,
         })
         .then((message) => {
-          message.react("977169624187695104").catch(console.error);
+          message.react("1242905478346969098").catch(console.error);
         })
         .catch(console.error);
 
