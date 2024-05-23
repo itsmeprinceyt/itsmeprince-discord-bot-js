@@ -217,7 +217,7 @@ client.on("messageCreate", async (message) => {
     }
     if (message.content === "..ww") {
       const embed = new EmbedBuilder()
-        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl }).setTitle(`ItsMe Prince - Game UID`).setDescription(`Wuthering Waves UID: 502272457`);
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl }).setTitle(`ItsMe Prince - Game UID`).setDescription(`Wuthering Waves UID: 900584281 [SEA]`);
 
       await message.reply({
         embeds: [embed],
