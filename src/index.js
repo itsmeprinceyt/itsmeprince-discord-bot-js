@@ -228,12 +228,28 @@ client.on("messageCreate", async (message) => {
         }\nResponse: Sent\nTime: ${new Date()}`
       );
     }
+    if (message.content === "..artwork") {
+      const embed = new EmbedBuilder()
+        .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
+        .setTitle("ItsMe Prince0 Bot - Artwork")
+        .setDescription("A huge thank you to <@1094512747137474560> for creating this amazing artwork for the ItsMe Prince bot! If you're looking for fantastic artwork commissions, be sure to reach out to them!")
+        .setImage("https://cdn.discordapp.com/attachments/1179367744014143510/1245863281826988072/Final_ItsMe_Prince_Bot_Logo.png");
+
+      await message.reply({
+        embeds: [embed],
+      });
+      console.log(
+        `\nUser: [${message.author.username}]\nCommand: ${
+          message.content
+        }\nResponse: Sent\nTime: ${new Date()}`
+      );
+    }
     if (message.content === "..help") {
       const embed = new EmbedBuilder()
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Commands`)
         .setDescription(
-          "```..instagram``````..youtube``````..discord``````..clips``````..sofiguide``````..ppdevice``````..pppc``````..whatsapp``````..math``````..gi``````..hsr``````..ww``````..bgmi```\n```..help```"
+          "```..instagram``````..youtube``````..discord``````..clips``````..sofiguide``````..ppdevice``````..pppc``````..whatsapp``````..math``````..gi``````..hsr``````..ww``````..bgmi```\n```..artwork``````..help```"
         );
 
       await message.reply({
