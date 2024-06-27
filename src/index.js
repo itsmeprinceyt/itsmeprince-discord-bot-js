@@ -34,6 +34,9 @@ const ItsMePrinceShopWelkin =
 const ItsMePrinceShopExpressPass =
   "https://cdn.discordapp.com/attachments/1179367744014143510/1237461202574250177/Express_Pass.png";
 
+const ItsMePrinceShopLunite = 
+  "https://cdn.discordapp.com/attachments/1179367744014143510/1255807322220003328/Lunite.png";
+
 //handles all the messages + embed messages
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
@@ -302,7 +305,7 @@ client.on("messageCreate", async (message) => {
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
         .setTitle(`ItsMe Prince Bot - Admin Commands`)
         .setDescription(
-          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/wuthering_waves_astrites` • Send Astrites Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n`/itsmeprince_changes` • Sends Changes Embed"
+          "`/genshin_impact_primogem` • Send Primogems Notification\n`/genshin_impact_livestream` • Send Livestream Primogems Notification\n`/honkai_star_rail_jades` • Send Jades Notification\n`/wuthering_waves_astrites` • Send Astrites Notification\n`/honkai_star_rail_livestream` • Send Livestream Jades Notification\n`/in_stock_welkin` • Welkin IN STOCK\n`/in_stock_express_pass` • Express Pass IN STOCK\n`/in_stock_lunite` • Lunite Pass IN STOCK\n`/out_of_stock_welkin` • Welkin OUT OF STOCK\n`/out_of_stock_express_pass` • Express Pass OUT OF STOCK\n`/out_of_stock_lunite` • Lunite Pass OUT OF STOCK\n`/itsmeprince_changes` • Sends Changes Embed"
         );
 
       await message.reply({
@@ -399,6 +402,45 @@ client.on("interactionCreate", async (interaction) => {
         `[IN STOCK] Honkai Staril Rail Express Supply Pass Stock Updated at ${new Date()}`
       );
     }
+    if (interaction.commandName === "in_stock_lunite") {
+      const Code = interaction.options.get("price").value;
+
+      const code =
+        "```WUTHERING WAVES - LUNITE PASS```" +
+        `\`\`\`PRICE ${Code}\`\`\``;
+      const main = new EmbedBuilder()
+        .setTitle("IN STOCK !!")
+        .setDescription(code)
+        .setImage(ItsMePrinceShopLunite)
+        .setFooter({ text: "Prices can fluctuate anytime" })
+        .setTimestamp()
+        .setColor(0x63ff00);
+
+      const body = new EmbedBuilder()
+        .setTitle("Read before purchasing")
+        .setDescription("Read <#1242938772493176973> before proceeding")
+        .setColor(0x63ff00);
+
+      const footer = new EmbedBuilder()
+        .setTitle("To Purchase")
+        .setDescription(
+          "**Use** <#1181972522900660264> **to initiate an order** or  **Message** <@310672946316181514>"
+        )
+        .setColor(0x63ff00);
+
+      await interaction
+        .reply({
+          content: "<@&1179344445875953694> <@&1179346833294753874>",
+          embeds: [main, body, footer],
+          allowedMentions: { parse: ["roles"] },
+          fetchReply: true,
+        })
+        .catch(console.error);
+
+      console.log(
+        `[IN STOCK] Wuthering Waves Lunite Pass Stock Updated at ${new Date()}`
+      );
+    }
     if (interaction.commandName === "out_of_stock_welkin") {
       const code = "```GENSHIN IMPACT - BLESSING OF THE WELKIN MOON```";
       const main = new EmbedBuilder()
@@ -435,6 +477,25 @@ client.on("interactionCreate", async (interaction) => {
 
       console.log(
         `[OUT OF STOCK] Honkai Staril Rail Express Supply Pass Stock Updated at ${new Date()}`
+      );
+    }
+    if (interaction.commandName === "out_of_stock_lunite") {
+      const code = "```WUTHERING WAVES - LUNITE PASS```";
+      const main = new EmbedBuilder()
+        .setTitle("OUT OF STOCK !!")
+        .setDescription(code)
+        .setImage(ItsMePrinceShopLunite)
+        .setColor(0xff0000);
+
+      await interaction
+        .reply({
+          embeds: [main],
+          fetchReply: true,
+        })
+        .catch(console.error);
+
+      console.log(
+        `[OUT OF STOCK] Wuthering Waves Lunite Pass Stock Updated at ${new Date()}`
       );
     }
     if (interaction.commandName === "itsmeprince_changes") {
