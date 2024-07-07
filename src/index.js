@@ -59,8 +59,8 @@ client.on("messageCreate", async (message) => {
     if (message.content === "..youtube") {
       const embed = new EmbedBuilder()
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
-        .setTitle("ItsMe Prince0 - YouTube")
-        .setDescription("https://www.youtube.com/@itsmeprince0");
+        .setTitle("I Am Prince- YouTube")
+        .setDescription("https://www.youtube.com/@itsmeprinceyt");
 
       await message.reply({
         embeds: [embed],
@@ -89,9 +89,9 @@ client.on("messageCreate", async (message) => {
     if (message.content === "..clips") {
       const embed = new EmbedBuilder()
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
-        .setTitle("ItsMe Prince Clips - YouTube")
+        .setTitle("I Am Prince: Clips - YouTube")
         .setDescription(
-          "https://www.youtube.com/playlist?list=PLE3BGeUsE3iqhCkZaXgHTPnN8s__8uNCt"
+          "https://www.youtube.com/playlist?list=PLiFooJ43_R5R2usnfqq4D1JkG2Bz1A8VB"
         );
 
       await message.reply({
@@ -106,8 +106,8 @@ client.on("messageCreate", async (message) => {
     if (message.content === "..sofiguide") {
       const embed = new EmbedBuilder()
         .setAuthor({ name: "ItsMe Prince", iconURL: AuthorIconUrl })
-        .setTitle("Sofi Discord Bot FULL HINDI GUIDE - YouTube")
-        .setDescription("https://youtu.be/kfrl1yO8sUA");
+        .setTitle("Guide: Discord Sofi Bot - YouTube")
+        .setDescription("https://www.youtube.com/playlist?list=PLiFooJ43_R5Q1zTlBETetSZhVNUnMJj12");
 
       await message.reply({
         embeds: [embed],
